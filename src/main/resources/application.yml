@@ -1,0 +1,21 @@
+# Spring & model settings
+datasource:
+  url: jdbc:h2:mem:loanDb;DB_CLOSE_DELAY=-1
+  driver-class-name: org.h2.Driver
+  username: sa
+  password:
+
+jpa:
+  hibernate:
+    ddl-auto: update
+  show-sql: true
+
+ml:
+  model-path: classpath:ml/loan_model.pkl
+  explainer-path: classpath:ml/shap_explainer.pkl
+
+python:
+  script: classpath:python/score.py
+
+server:
+  port: 8080
